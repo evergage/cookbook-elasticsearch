@@ -18,6 +18,8 @@ class ElasticsearchCookbook::ConfigureResource < Chef::Resource::LWRPBase
   attribute(:path_plugins, kind_of: String, default: '/usr/share/elasticsearch/plugins')
   attribute(:path_bin,     kind_of: String, default: '/usr/share/elasticsearch/bin')
 
+  attribute(:include_systemd_scripts,     kind_of: [TrueClass, FalseClass], default: true)
+
   attribute(:template_elasticsearch_env, kind_of: String, default: 'elasticsearch.in.sh.erb')
   attribute(:cookbook_elasticsearch_env, kind_of: String, default: 'elasticsearch')
 
